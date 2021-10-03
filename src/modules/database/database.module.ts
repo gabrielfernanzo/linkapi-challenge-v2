@@ -12,5 +12,6 @@ import { DailyProfit } from './schemas/daily-profit.schema';
   ],
   controllers: [DatabaseController],
   providers: [DatabaseService],
+  exports: [MongooseModule, HttpModule, DatabaseService],
 })
 export class DatabaseModule {}
