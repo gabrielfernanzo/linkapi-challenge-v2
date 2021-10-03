@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { PipedriveModule } from './modules/pipedrive/pipedrive.module';
 import { BlingModule } from './modules/bling/bling.module';
+import { DatabaseModule } from './modules/database/database.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { BlingModule } from './modules/bling/bling.module';
     ),
     PipedriveModule,
     BlingModule,
+    DatabaseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
