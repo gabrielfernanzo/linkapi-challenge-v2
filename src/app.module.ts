@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { PipedriveModule } from './modules/pipedrive/pipedrive.module';
 import { BlingModule } from './modules/bling/bling.module';
 import { DatabaseModule } from './modules/database/database.module';
+import { IntegrationModule } from './modules/integration/integration.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { DatabaseModule } from './modules/database/database.module';
     PipedriveModule,
     BlingModule,
     DatabaseModule,
+    IntegrationModule,
   ],
   controllers: [AppController],
   providers: [AppService],
