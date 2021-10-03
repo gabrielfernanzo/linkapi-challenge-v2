@@ -10,6 +10,10 @@ export class BlingService {
   private baseUrl: string = this.config.get('BLING_URL');
   private blingApiKey: string = this.config.get('BLING_API_KEY');
 
+  /**
+   * Connects to the Bling api and retrieve data
+   * @returns a list containing all sell orders
+   */
   async findAllSellOrders(): Promise<any> {
     try {
       return await lastValueFrom(
@@ -25,13 +29,19 @@ export class BlingService {
     }
   }
 
+  /**
+   * Connects to the Bling platforma and inserts data
+   * @param xmlOrder containing the order data
+   * @returns a new sell order
+   */
   async createSellOrder(xmlOrder: string): Promise<any> {
     try {
-      return await lastValueFrom(
+      const { data: res } = await lastValueFrom(
         this.http.post(
-          `${this.baseUrl}/pedidos/json?apikey=${this.blingApiKey}&xml=${xmlOrder}`,
+          `${this.baseUrl}/pedido/json?apikey=${this.blingApiKey}&xml=${xmlOrder}`,
         ),
       );
+      return res;
     } catch (err) {
       console.log(
         'ERROR: An error occurred while trying to create new sell order.',

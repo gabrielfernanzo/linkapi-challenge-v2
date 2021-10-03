@@ -7,5 +7,6 @@ import { HttpModule } from '@nestjs/axios';
   imports: [HttpModule],
   controllers: [BlingController],
   providers: [BlingService],
+  exports: [BlingService, HttpModule],
 })
 export class BlingModule {}
