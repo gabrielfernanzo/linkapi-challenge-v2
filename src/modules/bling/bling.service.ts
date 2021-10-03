@@ -1,8 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { HttpService } from '@nestjs/axios';
 import { lastValueFrom } from 'rxjs';
-// import { InjectConnection } from '@nestjs/mongoose';
-// import { Connection } from 'mongoose';
 import { ConfigService } from '@nestjs/config';
 
 @Injectable()
