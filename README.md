@@ -79,7 +79,7 @@ BLING_URL=https://bling.com.br/Api/v2
 
 **:floppy_disk: Database**  
  - You can find the missing database information by following the steps described in this [tutorial](https://docs.atlas.mongodb.com/getting-started/).
- - After you get the connection URI you'll have to config it at the [AppModule](https://github.com/gabrielFernandes-dev/linkapi-challenge-v2/blob/master/src/app.module.ts) (you must change whats inside "< domain >");
+ - After you get the connection URI you'll have to config it at the [AppModule](https://github.com/gabrielFernandes-dev/linkapi-challenge-v2/blob/master/src/app.module.ts) (you must change this => "<domain>");
  
 **:chart_with_upwards_trend: Pipedrive CRM**
  - You must create a [Developer account](https://developers.pipedrive.com) at the **Pipedrive** platform and get the API key, which can be done by following [these](https://support.pipedrive.com/en/article/how-can-i-find-my-personal-api-key) steps.
