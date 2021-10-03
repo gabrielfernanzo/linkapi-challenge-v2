@@ -56,8 +56,14 @@ export class Functions {
       deals: formatedDeals,
       ammount,
       record_date: this.getCurrentDate(),
-      updated_at: this.getCurrentDate(),
+      updated_at: this.getCurrentTime(),
     };
+  }
+
+  getCurrentTime(): string {
+    return Intl.DateTimeFormat('en-US', { timeStyle: 'medium' }).format(
+      new Date(),
+    );
   }
 
   getCurrentDate(): Date {
