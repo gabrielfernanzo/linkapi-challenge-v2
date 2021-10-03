@@ -7,5 +7,6 @@ import { HttpModule } from '@nestjs/axios';
   imports: [HttpModule],
   controllers: [PipedriveController],
   providers: [PipedriveService],
+  exports: [PipedriveService, HttpModule],
 })
 export class PipedriveModule {}
