@@ -57,7 +57,7 @@ export class DatabaseService {
    * @method Updates a record
    * (no endpoint)
    * @param identifier `record_date`
-   * @param dailyProfit 
+   * @param dailyProfit
    * @returns a newly created record
    */
   async updateDailyProfit(
