@@ -39,7 +39,7 @@ export class DatabaseService {
         return {
           status: 'success',
           res: await this.dailyProfit.updateOne(newDailyProfit),
-          message: 'This record is already alrealdy exists.',
+          message: 'Record updated.',
         };
       }
       return await this.dailyProfit.create(newDailyProfit);

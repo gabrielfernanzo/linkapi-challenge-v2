@@ -46,7 +46,7 @@ export function dealsToDailyProfit(deals: any) {
     ammount += value * products_count;
   }
   const formatedDeals = deals.map((d) =>
-    this.dealToSellOrder({
+    dealToSellOrder({
       ...d,
       description: `Produto ${d.id} de ${d.org_id.name}`,
     }),
