@@ -40,10 +40,10 @@ export function toXmlSellOrder(sellOrderObj: SellOrder) {
 }
 
 export function dealsToDailyProfit(deals: any) {
-  let ammount = 0;
+  let amount = 0;
 
   for (const { value, products_count } of deals) {
-    ammount += value * products_count;
+    amount += value * products_count;
   }
   const formatedDeals = deals.map((d) =>
     dealToSellOrder({
@@ -53,7 +53,7 @@ export function dealsToDailyProfit(deals: any) {
   );
   return {
     deals: formatedDeals,
-    ammount,
+    amount,
     record_date: getCurrentDate(),
     updated_at: getCurrentTime(),
   };
