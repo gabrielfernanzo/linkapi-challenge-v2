@@ -1,19 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Functions } from 'src/utils/Functions';
 import { DailyProfit } from './schemas/daily-profit.schema';
+
+// custom imports
+import { getCurrentDate } from 'src/utils/Functions';
 
 @Injectable()
 export class DatabaseService {
-  public utils: Functions;
-
   constructor(
     @InjectModel('DailyProfit')
     private readonly dailyProfit: Model<DailyProfit>,
-  ) {
-    this.utils = new Functions();
-  }
+  ) {}
 
   /**
    * @method Search through the DailyProfits collection
@@ -33,7 +31,7 @@ export class DatabaseService {
   async createDailyProfit(newDailyProfit: DailyProfit): Promise<any> {
     try {
       const alreadyExists = await this.dailyProfit.findOne({
-        record_date: this.utils.getCurrentDate(),
+        record_date: getCurrentDate(),
       });
       console.log('already:', alreadyExists);
       if (alreadyExists !== null) {
