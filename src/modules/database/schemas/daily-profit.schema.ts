@@ -9,7 +9,7 @@ export const DailyProfit = new mongoose.Schema({
 });
 
 export interface DailyProfit {
-  _id: string;
+  _id?: string;
   deals: SellOrder[];
   record_date: Date;
   updated_at: string;
