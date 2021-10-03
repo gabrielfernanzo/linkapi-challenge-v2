@@ -1,38 +1,104 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+  <img src="https://avatars.githubusercontent.com/u/38729977?s=200&v=4" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<h1 align=center>
+    LinkApi <code>Coding</code> Challenge 
+</h1>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+
+<div align=center>
+    <a href="#desc">Description</a> | <a href="#install">Installation</a> | <a href="#config">Config</a> | <a href="#running">Running</a> | <a href="#endpoints">Endpoints</a> | <a href="#docs">Docs</a>
+</div>    
+
+<br>
+
+<p align="center">
+  <img src="https://nodejs.dev/static/nodejs-logo-light-mode-e8344f71081da53be8ee1098584a0ab6.svg" width="80px"/>
+  <br>
+  <img src="https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" width="90px"/>
+  <img src="https://docs.nestjs.com/assets/logo-small.svg" width="40px"/>
+  
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+<br>
+<hr>
+<h2 id="desc"> 
+    Description 
+</h2>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+ Challange proposed by LinkApi as a step of their hiring process.
+Tasks:
+1. Create a Restful API unsing [Node.js](https://nodejs.org/en/)
+    - Create a developer account on both Pipedrive and Bling.  
+    - Create a MongoDB Databse Instance (Atlas was recommended).  
+    - Create an API Itegration between those two platforms which should get Pipedrive's **Deals** which have the `status` field set as **"won"**, and insert it as a new sell Order at Bling.  
+    - Create a `collection` containing the deals and the final amount (deals money values sum) related to a particular day.  
+    - Create an endpoint containing to get the needed data.
 
-## Installation
+- - - -
+<h2 id="install">
+  Installation  
+</h2>
+
+Once you're on the project directory run:
+
+
+```bash
+$ yarn
+```
+Or ...  
 
 ```bash
 $ npm install
 ```
+- - - -
+<h2 id="config">
+   Base Config
+</h2>
 
-## Running the app
+So, the first thing you'll need to do after cloning this repo, is to create a **Mongodb** database instance wherever it is, although I also recommend using **Atlas**. Then, you must
+create a `.env` file based on the following example:  
+<br>
+
+```bash
+DATABASE_PASSWORD=
+DATABASE_NAME=
+DATABASE_USER=
+PIPEDRIVE_API_TOKEN=
+BLING_API_KEY=
+BLING_URL=https://bling.com.br/Api/v2
+
+```
+
+<details>
+    <summary>:warning: Quick tip </summary>
+    This project was designed to connect to the database via uri, so if you wish go through a different process beware that it's on you. 
+</details>
+<br>
+
+**:floppy_disk: Database**  
+ - You can find the missing database information by following the steps described in this [tutorial](https://docs.atlas.mongodb.com/getting-started/).
+ - After you get the connection URI you'll have to config it at the [AppModule](https://github.com/gabrielFernandes-dev/linkapi-challenge-v2/blob/master/src/app.module.ts) (you must change whats inside "< domain >");
+ 
+**:chart_with_upwards_trend: Pipedrive CRM**
+ - You must create a [Developer account](https://developers.pipedrive.com) at the **Pipedrive** platform and get the API key, which can be done by following [these](https://support.pipedrive.com/en/article/how-can-i-find-my-personal-api-key) steps.
+ 
+**:bar_chart: Bling ERP**
+ - You can create a **Developer account** at the Bling platform ang get the API key my clicking in [this link](https://ajuda.bling.com.br/hc/pt-br/articles/360035558634-Usu%C3%A1rio-e-Usu%C3%A1rio-API).
+
+<br>
+
+<h1 align=center>
+  :hourglass_flowing_sand:  
+</h1>
+  
+- - - - 
+<h2 id="running">
+ Running the app
+</h2>
+
+For running this application run one of following commands:
 
 ```bash
 # development
@@ -45,29 +111,22 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+Your server should be up and running by now. Have Fun! :rocket: :tada: :wink:
 
-```bash
-# unit tests
-$ npm run test
+ - - - -  
+<h2 id="endpoints">
+ Endpoints
+</h2>
 
-# e2e tests
-$ npm run test:e2e
 
-# test coverage
-$ npm run test:cov
-```
+1. :incoming_envelope: ***POST*** `api/integration/migrate` 
+    - Executes de integration.
+2. :open_file_folder: ***GET*** `api/integration/record`
+    - Retrives data from the database.
+- - - -
 
-## Support
+<h2 id="docs">
+ Docs
+</h2>
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Once the project is running, you can make requests from the [Swagger](https://docs.nestjs.com/openapi/introduction) Documentation page of this Project. You can access it by openening `http://localhost:3000/api/docs`.
