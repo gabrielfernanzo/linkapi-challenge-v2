@@ -15,7 +15,7 @@ import { IntegrationModule } from './modules/integration/integration.module';
       isGlobal: true,
     }),
     MongooseModule.forRoot(
-      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@challenge.zpaf9.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.DATABASE_USER}:${process.env.DATABASE_PASSWORD}@<domain>/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
     ),
     PipedriveModule,
     BlingModule,
