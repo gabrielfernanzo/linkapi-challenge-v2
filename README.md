@@ -120,7 +120,7 @@ Your server should be up and running by now. Have Fun! :rocket: :tada: :wink:
 
 
 1. :incoming_envelope: ***POST*** `api/integration/migrate` 
-    - Executes de integration.
+    - Executes the integration.
 2. :open_file_folder: ***GET*** `api/integration/record`
     - Retrives data from the database.
 - - - -
