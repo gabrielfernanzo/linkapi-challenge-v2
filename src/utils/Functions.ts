@@ -14,7 +14,7 @@ export class Functions {
     return order;
   }
 
-  toXmlSellOrder = (sellOrderObj: SellOrder) => {
+  toXmlSellOrder(sellOrderObj: SellOrder) {
     return `
       <?xml version="1.0" encoding="UTF-8"?>
       <pedido>
@@ -38,7 +38,7 @@ export class Functions {
         </itens>
       </pedido>
       `;
-  };
+  }
 
   dealsToDailyProfit(deals: any) {
     let ammount = 0;
