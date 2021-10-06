@@ -98,7 +98,7 @@ BLING_URL=https://bling.com.br/Api/v2
  Running the app
 </h2>
 
-For running this application run one of following commands:
+For running this application run one of the following commands:
 
 ```bash
 # development
