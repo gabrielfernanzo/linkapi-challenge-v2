@@ -14,7 +14,7 @@
 <br>
 
 <p align="center">
-  <img src="https://nodejs.dev/static/nodejs-logo-light-mode-e8344f71081da53be8ee1098584a0ab6.svg" width="80px"/>
+  <img src="https://seeklogo.com/images/N/nodejs-logo-065257DE24-seeklogo.com.png" width="80px"/>
   <br>
   <img src="https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg" width="90px"/>
   <img src="https://docs.nestjs.com/assets/logo-small.svg" width="40px"/>
